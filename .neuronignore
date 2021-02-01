@@ -1,0 +1,7 @@
+# Ignore top-level dotfiles and dotdirs
+.*/**
+
+# Ignore project specific files
+README.md
+CHANGELOG.md
+LICENSE.md
