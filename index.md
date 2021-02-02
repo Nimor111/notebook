@@ -7,7 +7,7 @@ Welcome to my Zettelkasten. This is a website to implement the Zettelkasten meth
 
 The technology used to implement the method is the great [neuron](https://github.com/srid/neuron).
 
-As a beginning, you can take a look at the [[2021503]] section.
+As a beginning, you can take a look at the [[2021503]]# section.
 
 ## Inbox
 For notes that have not been processed and connected to the web yet.
