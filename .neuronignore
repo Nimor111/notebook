@@ -2,6 +2,6 @@
 .*/**
 
 # Ignore project specific files
-README.md
+**/README.md
 CHANGELOG.md
 LICENSE.md
