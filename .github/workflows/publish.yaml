@@ -9,14 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Download neuron
+    - name: Install Nix
+    # You may pin to the exact commit or the version.
+    # uses: cachix/install-nix-action@07da2520eebede906fbeefa9dd0a2b635323909d
+      uses: cachix/install-nix-action@v1
+    - name: Install neuron v1
       run: |
-        curl --silent https://api.github.com/repos/srid/neuron/actions/artifacts \
-          | jq 'first(.artifacts | .[] | select(.name == "neuron-bundle-linux") | .archive_download_url)' -r \
-          | xargs curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --silent -L -o neuron-bundle-linux.zip
-        unzip neuron-bundle-linux.zip
-        chmod +x neuron
-        ./neuron --version  # This extracts the bundle; should take a while
+        nix-env -if https://github.com/srid/neuron/archive/v1.tar.gz
     - name: Build neuron site 🔧
       run: |
         ./neuron -d $PWD rib
