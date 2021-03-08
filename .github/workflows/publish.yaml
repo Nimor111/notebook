@@ -18,7 +18,7 @@ jobs:
         nix-env -if https://github.com/srid/neuron/archive/v1.tar.gz
     - name: Build neuron site 🔧
       run: |
-        ./neuron -d $PWD rib
+        neuron -d $PWD rib
     - name: Deploy to gh-pages 🚀
       uses: peaceiris/actions-gh-pages@v3
       with:
