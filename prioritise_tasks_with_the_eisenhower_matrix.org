@@ -1,0 +1,15 @@
+* Prioritise tasks with the Eisenhower matrix
+:PROPERTIES:
+:Date: 2021-03-20T19:10
+:tags: literature
+:END:
+
+** Note
+The Eisenhower matrix for organising your day/week/month
+This is based off the idea of prioritisation of tasks - it has four quadrants:
+1. Important and urgent tasks - do them right away
+2. Important but not urgent tasks - schedule them for later but still so them
+3. Not important but urgent - delegate OR automate them somehow
+4. Not important and not urgent - annihilate them, time wasters are here
+** Links
+[[z:/how_to_use_productivity_advice_instead_of_just_consuming_it?type=branch]]

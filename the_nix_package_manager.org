@@ -1,0 +1,9 @@
+* The Nix package manager
+:PROPERTIES:
+:Date: 2021-03-25T22:43
+:tags: permanent
+:END:
+
+** Note
+Nix is a different way of looking at package management. It takes a pure and functional approach to package management. Every package is an immutable =derivation=, that acts as a singular unit. The Nix package manager stores all its derivations in the nix =store=. Every derivation has its own copies of its dependencies and is isolated from the rest of the store which solves the dependency hell problem pretty nicely. This does make the storage requirements for Nix a bit higher than other package managers since you can have a lot of copies of the same derivation.
+** Links

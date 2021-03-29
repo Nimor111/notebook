@@ -1,0 +1,13 @@
+* Stream notes introduction
+:PROPERTIES:
+:Date: 2021-03-27
+:tags: stream
+:END:
+
+** Note
+Welcome to my stream of notes. Its aim is to have, well, a stream of notes, one (or more) per day. Each note can
+be something good that happened that day, something I discovered, the highlight of the day, a citation or
+something of the sort. The idea is to focus on one good thing each day and be able to look back at them often,
+for motivation and nostalgia.
+
+Inspired by: https://rushsteve1.us/feed, as in "Twitter without the twitter".

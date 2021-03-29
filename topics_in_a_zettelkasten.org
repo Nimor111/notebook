@@ -1,0 +1,19 @@
+* Topics in a zettelkasten
+:PROPERTIES:
+:Date: 2021-03-18T23:22
+:tags: literature
+:END:
+
+** Note
+Topics make it easy to filter by a specific related group of ideas
+
+An important thing about topics is that they should be related to the context in which you want to stumble upon this note in the future.
+
+Examples of topics:
+
+1. A note with a topic of clusterization rather than the more general machine learning will come in handy when writing about or doing research on clusterization.
+2. When writing a note about haskell, tag it with - pure functional programming, strong type system, using types
+   to prove stuff at compile time, instead of tagging it with just haskell.
+
+** Links
+[[z:/zettelkasten_fundamentals?type=branch]]

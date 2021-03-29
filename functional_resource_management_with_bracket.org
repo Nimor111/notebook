@@ -1,0 +1,27 @@
+* Functional resource management with Bracket
+:PROPERTIES:
+:Date: 2021-03-20T18:57
+:tags: literature
+:END:
+
+** Note
+A problem when acquiring resources for use in applications (opening files, database connections, http
+connections) is closing them even when the operation fails. Imperative programs have =try,catch,finally= for
+this, but what does Cats Effect have in the functional world?
+It has =Bracket=. It's a type class that can have an instance for a custom type, it is also defined for =IO= by default.
+
+Some of its usages are as follows.
+
+The close will run even if any of the other operations fails or succeeds
+#+begin_src scala
+open(file).bracket { readFile } { close }
+#+end_src
+
+Also guarantee is another function like this
+This is the same idea as =try,catch,finally=, the =otherAction= will always run.
+#+begin_src scala
+action.guarantee(otherAction)
+#+end_src
+
+** Links
+[[z:/basic_resource_management_with_bracket_in_cats-effect?type=branch]]

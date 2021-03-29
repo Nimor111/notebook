@@ -1,0 +1,12 @@
+* Start with other people's systems
+:PROPERTIES:
+:Date: 2021-03-20T19:13
+:tags: literature
+:END:
+
+** Note
+When starting out with a productivity practice, it can be very useful to follow someone else's system and then
+adapt it to work for you. Takes off the pressure of coming up with a solution from scratch and frankly, wasting
+the mental energy to reinvent the wheel and it allows you to build upon something existing.
+** Links
+[[z:/how_to_use_productivity_advice_instead_of_just_consuming_it?type=branch]]

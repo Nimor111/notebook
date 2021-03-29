@@ -1,0 +1,10 @@
+* Zettelkasten fundamentals
+:PROPERTIES:
+:Date: 2021-03-18T22:59
+:tags: resource
+:END:
+
+** Resources
+- https://eugeneyan.com/writing/note-taking-zettelkasten/
+- https://blog.viktomas.com/posts/slip-box/
+- https://writingcooperative.com/zettelkasten-how-one-german-scholar-was-so-freakishly-productive-997e4e0ca125

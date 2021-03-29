@@ -1,0 +1,11 @@
+* Extensible effects
+:PROPERTIES:
+:Date: 2021-03-25T22:48
+:tags: resource
+:END:
+
+** Resources
+*** [[https://atnos-org.github.io/eff/org.atnos.site.Tutorial.html][Extensible Effects in Scala]]
+*** [[https://github.com/natefaubion/purescript-run][Extensible Effects in PureScript]]
+*** [[https://github.com/suhailshergill/extensible-effects][Extensible Effects in Haskell]]
+*** [[http://okmij.org/ftp/Haskell/extensible/exteff.pdf][Extensible Effects Paper]]

@@ -1,0 +1,8 @@
+* Learning a language, speak it like you're playing a video game
+:PROPERTIES:
+:Date: 2021-03-21T17:49
+:tags: resource
+:END:
+
+** Resources
+[[https://youtu.be/Ge7c7otG2mk][Ted talk]]

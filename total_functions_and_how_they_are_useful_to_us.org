@@ -1,0 +1,25 @@
+* Total functions and how they are useful to us
+:PROPERTIES:
+:Date: 2021-03-20T18:33
+:tags: literature
+:END:
+
+** Note
+Functions in programming are different from maths as they are a concrete implementation of something
+abstract, and thus have problems like how long they take to compute and whether they finish or hang.
+They have side effects as well. But FP mitigates some of these differences (e.g. pure functions), which allows us to talk about totality.
+
+A total function terminates and returns an output value for every value of the input domain.
+Totality in programming means avoiding runtime exceptions by preventing them from happening at compile time.
+Real totality is achieved without a bottom value, that in programming is usually something like =undefined= in
+Haskell, which throws exceptions at runtime and makes stuff partial. An example of a pure language is Dhall, a config language - all functions must be pure, total, and terminating.
+
+Benefits:
+- Not having to worry about missing cases in tests, as your function handles all inputs by being total and
+  won't blow up
+- Easier refactoring due to composition of total functions being total
+- Less production failures with unexpected exceptions
+- Easier to reason about when there aren't unforeseen edge cases lurking in the back
+
+** Links
+[[z:/totality_in_functional_programming?type=branch]]

@@ -1,0 +1,8 @@
+* Daily journaling resource
+:PROPERTIES:
+:Date: 2021-03-21T18:15
+:tags: resource
+:END:
+
+** Resource
+A linking note for the daily journal that I keep. Some good thoughts often come from there.

@@ -1,0 +1,8 @@
+* Totality in functional programming
+:PROPERTIES:
+:Date: 2021-03-20T18:25
+:tags: resource
+:END:
+
+** Resources
+https://kowainik.github.io/posts/totality

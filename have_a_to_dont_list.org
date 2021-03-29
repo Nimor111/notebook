@@ -1,0 +1,8 @@
+* Have a to don't list
+:PROPERTIES:
+:Date: 2021-03-21T17:54
+:tags: resource
+:END:
+
+** Resources
+https://theartofsimple.net/to-dont-do/

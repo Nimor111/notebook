@@ -1,0 +1,24 @@
+* Where can we introduce partiality in functions
+:PROPERTIES:
+:Date: 2021-03-20T18:39
+:tags: literature
+:END:
+
+** Note
+A function that is not total, is partial.
+Yet again pertaining to Haskell, but is valid for other FP languages.
+
+Where partiality can be introduced:
+- Non-exhaustive pattern matching
+- Missing conditions in guards
+- Any pattern matching, basically
+- Unspecified fields of records / structs / etc.
+- Using bottom, e.g. =error= and =undefined= in Haskell
+- Non-terminating loops
+- Seg faults, and other low-level issues
+
+Be careful when using wildcards, as adding new cases to types will lead to unexpected behaviour - prefer
+matching on all cases of a type instead when pattern matching.
+Same goes when using =error= for seemingly unreachable code, or "trusting" that functions from libraries are total.
+** Links
+[[z:/totality_in_functional_programming?type=branch]]

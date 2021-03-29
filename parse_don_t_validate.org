@@ -1,0 +1,11 @@
+* Parse don't validate
+:PROPERTIES:
+:Date: 2021-03-28
+:tags: resource
+:END:
+
+** Resources
+https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
+
+A follow-up to this post about a specific type of parser
+https://juliu.is/permutate-parsers/

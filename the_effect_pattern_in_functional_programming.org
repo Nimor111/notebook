@@ -1,0 +1,25 @@
+* The Effect Pattern in Functional Programming
+:PROPERTIES:
+:Date: 2021-03-27
+:tags: literature
+:END:
+
+** Note
+What is the Effect pattern in the context of functional programming?
+
+1. The program contains, in its type, what kinds of effects it performs, and what it returns, e.g. what type of
+   value it will result in.
+2. What external effects it requires (if any).
+   We separate the execution from the description of the effects, opting to perform the execution at the outermost
+   layer so we can keep referential transparency inside.
+
+It's basically a description of a type of computation.
+
+Examples of types that conform to this pattern - =Option=, =Either=
+
+One of the most popular implementation of this pattern for side effects (communication with the outside world) is the =IO= type.
+
+The =IO= type is a description a side-effecting computation - it represents a value that is delayed and will be
+calculated only when explicitly evaluated, as opposed to Future, which is evaluated when initialized.
+** Links
+[[z:/essential_effects_book?type=branch]]

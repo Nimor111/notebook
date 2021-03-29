@@ -1,0 +1,10 @@
+* Essential Effects Book
+:PROPERTIES:
+:Date: 2021-03-27
+:tags: resource
+:END:
+
+** Resources
+A book about programming with and modeling side effects in a functional way, shown through Scala and the Cats
+Effect library.
+https://essentialeffects.dev/

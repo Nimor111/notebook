@@ -1,0 +1,14 @@
+* Keep track of what you don't want to do as well
+:PROPERTIES:
+:Date: 2021-03-21T18:06
+:tags: literature
+:END:
+
+** Note
+An important way to free our mind of clutter is writing down explicitly what we're not going to do, also known
+as the the to don't list. It can capture things like tasks you've been putting off for a long time, or simply
+something that you don't feel will bring you value, but you are doing just to feel a sense of being
+productive. Crossing stuff off the to don't list can be just as fulfilling as the to do, because it's a feeling
+of taking control of your life and making choices, as well as having time to "stop and smell the roses".
+** Links
+[[z:/have_a_to_dont_list?type=branch]]

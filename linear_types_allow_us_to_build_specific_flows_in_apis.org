@@ -1,0 +1,44 @@
+* Linear types allow us to build specific flows in APIs
+:PROPERTIES:
+:Date: 2021-03-28
+:tags: literature
+:END:
+
+** Note
+Linear types allow us to set constraints like "this function must use this argument exactly once". In Haskell
+(>= GHC 9.0) this is denoted as =id :: a %1 -> a= instead of =id :: a -> a=.
+The =%1= is called a multiplicity, and could be more than 1.
+
+Linear types can be used to build specific flows in your APIs, e.g. take this or that path, but never both of
+them.
+
+#+begin_quote
+Normal Haskell types place constraints on what functions are allowed to be composed. Linear types place constraints on what data flows you are allowed to build.
+#+end_quote
+
+An example of this is connecting to a socket. When connecting to a socket, you can "lose" the previous unbound
+socket by saying that the argument can be used only once. This way you can't initialize the same socket twice.
+
+To make sure that nobody will use the same socket in another function, another =Monad= is defined in the
+=linear-base= package, where the callback enforces only once use in a do block:
+#+begin_src haskell
+(>>=) :: m a %1 -> (a %1 -> m b) %1 -> m b
+#+end_src
+
+So this:
+#+begin_src haskell
+create >>= connect s addr >>= connect s addr
+#+end_src
+Won't compile, because s is used twice in the same function.
+
+If you want to use a value in this monadic block, you can wrap it in the =Ur=, or unrestricted type, which has
+no restrictions on the amount of usages.
+
+A typeclass =Movable= defines a behaviour where primitive types can be used as many times as you like without
+taking into account linearity - Bool, Int, etc. This relates to the rust ownership concept in a way, as there
+primitive types are copied rather than moved.
+
+All constructors are going to get linear types (like Maybe for example), and you can override it with GADTs, as
+you write the types of the constructors explicitly there. (this is in =linear-base=)
+** Links
+[[z:/learn_just_enough_about_linear_types?type=branch]]

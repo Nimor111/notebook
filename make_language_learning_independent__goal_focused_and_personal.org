@@ -1,0 +1,21 @@
+* Make language learning independent, goal focused and personal
+:PROPERTIES:
+:Date: 2021-03-28
+:tags: literature
+:END:
+
+** Note
+I'm going to learn this language, it's me and the language (as a conversational partner of sorts). Learn a
+language for yourself, for your own reasons. Learn the language to pursue your interests instead of just
+learning it for the fact, or because it's popular and cool right now.
+
+Set specific goals to refer back to when it gets lonely and hard. Learn to appreciate
+[[z:/small_and_big_goal_steps?type=branch]].
+
+Instead of burying yourself in exercises and grammar, just listen, read to content, let it "come in", lookup
+grammar, etc. It's more important to let the language sink in without trying to remember everything.
+
+To make learning a language easy and always available, have a "language learning lab" with you all the time,
+like the audio of a course on your phone, or audiobooks.
+** Links
+[[z:/how_to_learn_a_language_on_your_own?type=branch]]

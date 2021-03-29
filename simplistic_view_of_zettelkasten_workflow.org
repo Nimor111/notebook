@@ -1,0 +1,23 @@
+* Simplistic view of Zettelkasten workflow
+:PROPERTIES:
+:Date: 2021-03-18T22:49
+:tags: literature
+:END:
+
+** Note
+Regular note taking doesn't prioritize connections between pieces of knowledge. The Zettelkasten is an attempt
+to capitalize on connecting notes rather than connecting them so that more meaningful output can come out of
+note taking. According to the Zettelkasten philosophy, a note is only useful in its context, e.g. other notes it relates to.
+
+Simple workflow:
+
+1. When reading, make literature notes - notes on an article, each key idea into a sentence that later is to
+   become a permanent note.
+2. Write an idea on a card / permanent note
+3. Link it to other, already existing, ideas
+4. Sort ideas into topics with topic links
+
+The key is making connections =during= note taking, not when writing and reviewing afterwards.
+
+** Links
+[[z:/zettelkasten_fundamentals?type=branch]]

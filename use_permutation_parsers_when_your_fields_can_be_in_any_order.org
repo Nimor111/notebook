@@ -1,0 +1,31 @@
+* Use permutation parsers when your fields can be in any order
+:PROPERTIES:
+:Date: 2021-03-28
+:tags: literature
+:END:
+
+** Note
+In functional code, we often opt to [[z:/keep_successful_values_instead_of_throwing_them_away_when_validating?type=branch]]
+
+But what do we do when our fields can be in any order?
+
+Permutation parsers (~Text.Parsec.Perm~ in the =parsec library=) can parse elements into a structure. The
+elements could be of any type and in any order that appear only once, like a permutation, with optional elements.
+
+This is added easily with =parsec= to an existing parser with the =permute= function:
+
+#+begin_src haskell
+passportParser :: Parser Passport
+passportParser =
+  permute $ -- here we permutate the fields so they can be matched in any order
+    Passport <$$> byrParser -- <$$> builds the type
+      <||> iyrParser -- <||> required field
+      <||> P.try eyrParser
+      <||> P.try heightParser
+      <||> P.try hairColorParser
+      <||> P.try eyeColorParser
+      <||> passportIdParser
+      <|?> (Nothing, Just <$> countryIdParser) -- <|?> optional field
+#+end_src
+
+** Links

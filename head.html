@@ -1,0 +1,58 @@
+<link href="static/background-pattern.css" rel="stylesheet" />
+<style>
+    #zettel-container {
+        max-width: 800px !important;
+    }
+
+    h2 {
+        text-align: left;
+        font-style: oblique;
+        border-bottom: none !important;
+    }
+
+    /* Hide the query divider */
+    div.pandoc section.tag-query-results .divider {
+        display: none !important;
+    }
+    div.pandoc section.tag-query-results .ui.list {
+        border-left: solid gray 1px !important;
+        padding-left: 1em;
+    }
+
+    .leftlisting {
+        width: 50%;
+    }
+
+    .rightlisting {
+        width: 50%;
+        float: right;
+    }
+</style>
+
+<!-- MathJax -->
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Syntax highlighting of code blocks -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<!-- 
+        Evaluate Tailwind CSS classes.
+        cf. https://github.com/tw-in-js/twind/discussions/161#discussioncomment-535632
+-->
+<script type="text/javascript" crossorigin="anonymous" src="https://unpkg.com/twind@0.16.9/twind.umd.js"> </script>
+<script type="text/javascript" crossorigin="anonymous"
+    src="https://unpkg.com/twind@0.16.9/observe/observe.umd.js"> </script>
+<script type="text/javascript">
+    twind.setup(
+      {
+        mode: twind.silent,  // Behave well with semantic UI classes
+        preflight: false,  // Don't resent semantic UI!
+        /* "plugins": {
+            "div.sridca-popout li": "mb-2"
+        }*/
+      }
+    );
+    twindObserve.observe(document.documentElement)
+</script>
+<!-- End of Twind script -->

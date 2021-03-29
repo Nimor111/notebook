@@ -1,0 +1,11 @@
+* Information vs Knowledge
+:PROPERTIES:
+:Date: 2021-03-20T18:22
+:tags: literature
+:END:
+
+** Note
+Information is scattered pieces on potentially different topics, spread apart and separated.
+Knowledge is a web, connecting the ideas together and making sense of them together.
+** Links
+[[z:/zettelkasten_fundamentals?type=branch]]

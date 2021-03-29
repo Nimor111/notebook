@@ -1,0 +1,13 @@
+* Stream
+:PROPERTIES:
+:Date: 2021-03-27T12:16
+:END:
+
+Welcome to my stream of notes!
+
+This is a continuous stream of notes, one (or more) per day, highlighting something interesting from each day.
+
+#+attr_html: :class rounded shadow-2xl border-2 border-solid border-green-400 text-xl mb-6
+#+begin_stream
+[[z:zettels?tag=stream&timeline]]
+#+end_stream

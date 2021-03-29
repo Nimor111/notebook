@@ -1,0 +1,43 @@
+* Keep successful values instead of throwing them away when validating
+:PROPERTIES:
+:Date: 2021-03-28
+:tags: literature
+:END:
+
+** Note
+When validating, many programs throw away the successful results of a validation if it's successful (for example
+by validating with a boolean function). What we can do instead is to parse the "good" value into a type of our
+own and continue using it in our program.
+
+Functional languages can perform this very well with types and parser combinators.
+
+We should be weary of shotgun parsing - mixing parsing and validating in one place, with the business logic as
+well, hoping that one of them catches any errors that may occur.
+
+An example of parsing a passport and returning a value of the =Passport= type
+
+#+begin_src haskell
+data Passport = Passport
+  { birthYear :: Int,
+    issueYear :: Int,
+    expirationYear :: Int,
+    height :: String,
+    hairColor :: String,
+    eyeColor :: String,
+    passportId :: String,
+    countryId :: Maybe Int
+  }
+
+passportParser :: Parser Passport
+passportParser =
+    Passport <$$> byrParser -- <$$> builds the type
+      <||> iyrParser -- <||> required field
+      <||> P.try eyrParser -- P.try - lookahead parser
+      <||> P.try heightParser
+      <||> P.try hairColorParser
+      <||> P.try eyeColorParser
+      <||> passportIdParser
+      <|?> (Nothing, Just <$> countryIdParser) -- <|?> optional field
+#+end_src
+** Links
+[[z:/parse_don_t_validate?type=branch]]

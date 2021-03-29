@@ -1,0 +1,32 @@
+* The parallel typeclass pattern
+:PROPERTIES:
+:Date: 2021-03-20T19:02
+:tags: literature
+:END:
+
+** Note
+The Parallel typeclass is an abstraction over the conversion between an Applicative and a Monad, e.g. when we
+want to do certain operations in parallel with an applicative instance, but then convert back to the monad to
+use a for comprehension.
+
+An example of it would be a conversion between Validated and Either, e.g. an Either with a List of errors as the
+Left. Another example is IO and ParIO.
+
+The definition is as follows:
+
+#+begin_src scala
+trait Parallel[F[_]] {
+  type M[_]
+  def F: Monad[F]
+  def M: Applicative[F]
+
+  def parallel: F ~> M
+  def sequential: M ~> F
+}
+#+end_src
+
+=parallel= and =sequential= are natural transformations between the Monad and the Applicative, e.g. functions
+without loss of information.
+
+** Links
+[[z:/the_parallel_typeclass_in_cats?type=branch]]

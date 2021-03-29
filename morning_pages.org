@@ -1,0 +1,13 @@
+* Morning pages
+:PROPERTIES:
+:Date: 2021-03-25T22:18
+:tags: literature
+:END:
+
+** Note
+The main idea behind morning pages is to act as a sort of brain dump in the morning when you wake up.
+Your head can quickly fill with thoughts that cause anxiety, worry you and can start your day off bad. So to
+reduce that anxiety, you can write your thoughts on paper (or virtual paper). You "trap" your thoughts on the paper, in a way. That reduces anxiety and can help start your day off right.
+Don't keep those thoughts stuck inside. As far as I understood it, it doesn't always have to be something of value, just get it out of there. Recommendation was three pages, but I guess that's not a fixed number.
+** Links
+[[z:/journaling_and_note_taking_by_tim_ferriss?type=branch]]

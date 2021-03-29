@@ -1,0 +1,10 @@
+* Extensible effects to manage side effects in functional programs
+:PROPERTIES:
+:Date: 2021-03-25T22:45
+:tags: literature
+:END:
+
+** Note
+Extensible effects is an alternative to monad transformers for managing stack of effects in a functional style architecture. The main idea is to have a base monad (=Eff= for example) that consists of a list of effects to execute. The effects can be used (or interpreted) one by one and naturally composed unlike monads. It also avoids stacking monads one on top the other that leads to quite unreadable code.
+** Links
+[[z:/extensible_effects?type=branch]]

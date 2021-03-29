@@ -1,0 +1,8 @@
+* The Parallel typeclass in Cats
+:PROPERTIES:
+:Date:     2021-03-20T18:58
+:tags:     resource
+:END:
+
+** Resources
+https://www.youtube.com/watch?v=Tx5LdRCaDcY

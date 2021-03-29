@@ -1,0 +1,8 @@
+* Given and Using Clauses in Scala 3
+:PROPERTIES:
+:Date: 2021-03-20T18:46
+:tags: resource
+:END:
+
+** Resources
+https://blog.rockthejvm.com/scala-3-given-using/

@@ -1,0 +1,12 @@
+* Create a productivity habit with a fixed days challenge
+:PROPERTIES:
+:Date: 2021-03-20T19:15
+:tags: literature
+:END:
+
+** Note
+To create a lasting habit for a productivity (or any habit, for that matter), you can start with an X day
+challenge to do the habit - that way you have the opportunity to see how the habit fits in to your regular
+routine and adapt it / change it.
+** Links
+[[z:/how_to_use_productivity_advice_instead_of_just_consuming_it?type=branch]]

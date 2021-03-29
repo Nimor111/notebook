@@ -1,0 +1,9 @@
+* Note title as sentences in my Zettelkasten
+:PROPERTIES:
+:Date: 2021-03-28
+:tags: stream
+:END:
+
+** Note
+Today I was able to use my idea of having note titles as sentences in my zettelkasten and then linking them
+in another note, naturally continuing and extending a thought. Felt pretty good.

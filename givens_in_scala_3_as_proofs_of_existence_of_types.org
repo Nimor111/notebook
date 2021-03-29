@@ -1,0 +1,14 @@
+* Givens in Scala 3 as proofs of existence of types
+:PROPERTIES:
+:Date: 2021-03-20T18:47
+:tags: literature
+:END:
+
+** Note
+From the point of view of Type level programming, a =given= proves the existence of a type - e.g. the compiler
+can prove the existence of types, and then create new given instances =using= those types. This can be used for
+computations at compile time. (e.g. for a type level sum for example)
+
+A =given= is conceptually constructing an instance of a type with a concrete behaviour where a =using= claused is used.
+** Links
+[[z:/given_and_using_clauses_in_scala_3?type=branch]]
