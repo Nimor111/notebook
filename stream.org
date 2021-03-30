@@ -7,7 +7,7 @@ Welcome to my stream of notes!
 
 This is a continuous stream of notes, one (or more) per day, highlighting something interesting from each day.
 
-#+attr_html: :class rounded shadow-2xl border-2 border-solid border-green-400 text-xl mb-6
+#+attr_html: :class p-6 max-w-xl mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4
 #+begin_stream
 [[z:zettels?tag=stream&timeline]]
 #+end_stream
