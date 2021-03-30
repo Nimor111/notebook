@@ -10,4 +10,6 @@
     Some "https://nimor111.github.io/notebook"
 , formats =
     [ "markdown", "org" ]
+, recurseDir = 
+    True
 }
