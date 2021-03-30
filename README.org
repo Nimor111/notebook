@@ -1,4 +1,4 @@
-# Notebook
+* Notebook
 
 These are my work in progress notes, following workflows like Zettelkasten, Digital Garden, Evergreen notes, etc.
 Made with [[https://github.com/srid/neuron][neuron]] (v1).
