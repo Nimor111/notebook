@@ -1,0 +1,27 @@
+* An org clock with a good history
+:PROPERTIES:
+:Date: 2021-04-01
+:tags: stream
+:END:
+
+** Note
+Today I discovered an Emacs package called [[https://github.com/unhammer/org-mru-clock/tree/master][org-mru-clock]].
+
+The main feature of the package is aggregating all recent clock entries from agenda files and other org files,
+up to a configurable number (=org-mru-clock-how-many= - the docs suggest putting it at 100). It can also be
+integrated with ivy completion which provides ivy's search and some cool actions such as jumping to the heading
+of the clocked item and so on (with =M-o g= on the entry in the minibuffer).
+
+Since the regular clock history of =org-clock= does not behave very well and is often broken / shows no items at
+all, =org-mru-clock= package is a great option for selecting which task to clock into from all your recent
+tasks through it's replacement of =org-clock-in= (=org-mru-clock-in=).
+
+An example configuration (with =straight.el=):
+
+#+begin_src elisp
+(use-package org-mru-clock
+  :straight t
+  :config
+  (setq org-mru-clock-how-many 100)
+  (setq org-mru-clock-completing-read #'ivy-completing-read))
+#+end_src
