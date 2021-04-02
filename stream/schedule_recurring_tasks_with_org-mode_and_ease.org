@@ -1,0 +1,27 @@
+* Schedule recurring tasks with org-mode and ease
+:PROPERTIES:
+:Date: 2021-04-02
+:tags: stream
+:END:
+
+** Note
+Today i'm going to write a bit about yet another Emacs package - this time it's for scheduling recurring tasks
+in your org-mode files - [[https://github.com/m-cat/org-recur][org-recur]].
+
+Scheduling recurring tasks in regular org-mode falls short when you want specific tasks to occur on specific
+days of the week, or only on weekdays, or some specific date of each month. Org recur makes that easier with
+some extra sugar sprinkled on top of the org-schedule functionality.
+
+#+begin_src org
+,*** |Mon,Tue,Thu,Fri| 08:45-09:00 Daily standup
+,*** |+2w| 14:00-15:00 Planning
+,*** |Tue, Thu| 16:45-17:35 Knowledge sharing
+,*** |Wkdy| Something very important
+#+end_src
+
+And so on. They are also rendered and placed correctly in the agenda.
+This, combined with the =org-recur-finish= function, will schedule and reschedule tasks on the
+correct days, weeks and months. It works very well.
+
+What it doesn't have and I would really like is to be able to reschedule tasks several times per day, every 3
+hours for example.
