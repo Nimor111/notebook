@@ -1,0 +1,73 @@
+* How to install a shell script with Nix
+:PROPERTIES:
+:Date: 2021-04-06
+:tags: stream
+:END:
+
+** Note
+Let's say you're a Nix user and you've found some piece of software that consists of a shell script ( there are
+a lot of those ). Unfortunately, your trusty friend =nixpkgs= doesn't yield any result for it, and you want your
+system to be fully reproducible, so naturally, you choose Nix. Now, how would we add this package to our system
+with Nix without it being in =nixpkgs=? We'll build a derivation for it and install it ourselves.
+
+We'll fetch the package from GitHub (=tmux-up=, i'll do a post about that some time), then use the =install=
+command to move it to the =bin= folder of the derivation and set the permissions so we will be able to call it.
+We specify =dontBuild = true= as we don't require any building here.
+
+It looks like this (in a =tmux-up.nix= file):
+#+begin_src nix
+{ stdenv, fetchFromGitHub }:
+
+stdenv.mkDerivation rec {
+  name = "tmux-up";
+  version = "87a89989ad4a588eb5f02cc2cda50335d26d8435";
+
+  src = fetchFromGitHub {
+    owner = "jamesottaway";
+    repo = "tmux-up";
+    rev = version;
+    sha256 = "1ykxqayz7qh7c7xzz01wkcvw4hmxg1nr50a6lpr0w0w99qcz0y8x";
+  };
+
+  dontBuild = true;
+
+  installPhase = ''
+    install -Dm755 -t $out/bin tmux-up
+  '';
+}
+#+end_src
+
+To fetch the information needed for =fetchFromGitHub=, we can use the =nix-prefetch-git= utility:
+
+#+begin_src sh :results raw
+nix-prefetch-git --url https://github.com/jamesottaway/tmux-up
+#+end_src
+
+The result at the time of writing is:
+#+begin_src json
+{
+  "url": "https://github.com/jamesottaway/tmux-up",
+  "rev": "87a89989ad4a588eb5f02cc2cda50335d26d8435",
+  "date": "...",
+  "path": "...",
+  "sha256": "1ykxqayz7qh7c7xzz01wkcvw4hmxg1nr50a6lpr0w0w99qcz0y8x",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}
+#+end_src
+
+To use this, we use the =callPackage= function (which does things like passing the =stdenv= and
+=fetchFromGitHub= arguments automatically) in a =default.nix= file:
+
+#+begin_src nix
+let
+  pkgs = import <nixpkgs> {};
+in
+pkgs.callPackage ./tmux-up.nix {}
+#+end_src
+
+Now, we can call =nix-build= and execute with =result/bin/tmux-up=.
+
+Easy as that! (Well, Nix does have a bit of a learning curve, but once you get used to it it's not that
+bad. Just be ready to read nixpkgs code and copy paste from other people's configs a lot until it works!)

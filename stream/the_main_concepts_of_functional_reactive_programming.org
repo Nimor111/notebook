@@ -1,0 +1,27 @@
+* The main concepts of functional reactive programming
+:PROPERTIES:
+:Date: 2021-04-04
+:tags: stream
+:END:
+
+** Note
+So today I watched a [[https://www.youtube.com/watch?v=ePgWU3KZvfQ][talk]] on functional reactive programming (FRP), which did a good job at explaining the basics of
+the pattern. FRP provides abstractions for values that change over time in a program, while keeping track of the
+time explicitly, as well as the stream of events that lead to that value changing. FRP is a good example of how
+the expressiveness and composability of functional programs can model real world interactions in an elegant way.
+
+*** The main abstractions in FRP are behaviours and events.
+**** Behaviours
+A behaviour can be thought of as state that changes over time. Semantically a =Behaviour a= is a
+function of type =Time -> a=, which can return its value at a particular point in time.
+
+**** Events
+Events are a stream of state changes that affect a behaviour. They can be semantically thought of as pairs of a
+time and a value, a stream of events has type =[(Time, a)]=.
+
+*** So how do we use them?
+We use them as any abstraction in FP - through combinators, building up big programs from smaller pieces.
+
+Through the power of combinators and these functional abstractions we can separate the concrete implementation and execution from the description of the program, which lets us think about problems at a higher and more declarative level.
+
+More to come later!
