@@ -1,0 +1,52 @@
+* Call package vs import in Nix
+:PROPERTIES:
+:Date: 2021-04-09
+:tags: stream
+:END:
+
+** Note
+Today i'm going to briefly talk about two ways to call nix functions that return derivations (which is the usual
+case in =default.nix= files).
+
+Let's say we have the following package in =some-package.nix= (some random haskell package):
+
+#+begin_src nix
+{pkgs ? import <nixpkgs> {}, ...}:
+
+let
+  somePackage = pkgs.haskellPackages.callCabal2nix "some-package" ./. { };
+in
+pkgs.stdenv.mkDerivation {
+  name = "some-package";
+  src = ./.;
+  installPhase = '''
+    mkdir -p $out/bin
+
+    makeWrapper ${somePackage}/bin/some-package $out/bin/some-package \
+      --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nix ]}
+  ''';
+}
+#+end_src
+
+And then we want to import this package somewhere else. We also want to make sure that it is built with a
+version of =nixpkgs= that we've defined, so we can have maximum reproducibility.
+
+Here's two ways to do it:
+
+#+begin_src nix
+pkgs.callPackage ./some-package.nix { };
+#+end_src
+
+And another
+#+begin_src nix
+import ./some-package.nix { inherit pkgs; } # our custom pkgs
+#+end_src
+
+So =callPackage= will automatically pass in the =pkgs= it's called with to =some-package=, while =import= will
+use either the default value in =some-package.nix= (or error out if there is no default value) or the =nixpkgs=
+that is passed explicitly. This is useful when you want to explicitly control the version, while calling
+=callPackage= with another version of =nixpkgs= for example.
+
+=callPackage= is the more popular option, and it's pretty handy as it passes arguments to derivation functions
+automatically, but it can be a source of confusion as to which =nixpkgs= is passed to the function. When you
+need more explicitness, use =import=.
