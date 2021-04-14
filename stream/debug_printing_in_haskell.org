@@ -1,0 +1,53 @@
+* Debug printing in Haskell
+:PROPERTIES:
+:Date: 2021-04-11
+:tags: stream
+:END:
+
+** Note
+Haskell code, being written in a language that at compile time enforces a purely functional style of
+programming, tends to look more like a composition of equations than a sequence of statements as we're used to
+in other languages.
+
+This leads to a more expressive and declarative style where side effects are well separated
+from the pure, non side-effecting code.
+
+However, it also means that our favourite prints when debugging (we all do it) can't be plugged in anywhere like we
+might be used to. So what do we do when we are writing some pure function outside of a monadic context and we
+can't use =putStrLn= which requires an =IO= to be present?
+
+We can use the =Debug.Trace= module.
+It exposes the =trace*= family of functions that are meant exactly for debugging purposes. What they do is
+to wrap the output of the function you want to debug and print out your debug output.
+
+*** Some examples:
+
+For =trace :: String -> a -> a=
+#+begin_src haskell
+import Debug.Trace (trace)
+
+f x = x + 1
+
+x = 5
+trace ("Calling f with x = " ++ show x) (f x)
+-- Output:
+-- Calling f with x = 5
+-- 6
+#+end_src
+
+We also have =traceShow :: Show a => a -> b -> b=. It uses the =Show= instance of the argument to convert it to
+a =String=
+#+begin_src haskell
+import Debug.Trace (traceShow)
+
+f x y = x + y
+let x = 5
+    y = 6
+traceShow (x,y) (f x y)
+-- Output:
+-- (5, 6)
+-- 11
+#+end_src
+
+These functions can be used anywhere because they are just regular functions. Beware though, they are impure
+since they perform side effects, so use them only locally when debugging.

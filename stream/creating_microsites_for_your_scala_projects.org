@@ -1,0 +1,60 @@
+* Creating microsites for your Scala projects
+:PROPERTIES:
+:Date: 2021-04-13
+:tags: stream
+:END:
+
+** Note
+A great plugin for the sbt build tool for Scala is =sbt-microsites=. It allows you to create a beautiful
+documentation website for your library/application with not a lot of effort. Keeps your documentation pretty and
+consistent and informs other people how to use your package!
+
+It uses jekyll under the hood to render markdown files into a static website. And it's packaged into a
+convenient =packageMicrosite= command that can integrate easily with github-pages to create a project
+website. (e.g. =your-username.github.io/your-project=). You can also use custom domains.
+
+*** Setup
+To set it up, I like to put it into a separate sbt subproject.
+
+1. In =project/plugins.sbt=, add the plugin
+   #+begin_src scala
+   addSbtPlugin("com.47deg"  % "sbt-microsites" % sbtMicrositesVersion)
+   #+end_src
+   You also need to have =jekyll= installed.
+2. Add the subproject to =build.sbt=. By default your documentation markdown files live in =docs= in the root of
+   the project.
+   #+begin_src scala
+   lazy val microsite = project
+     .in(file("microsite"))
+     .settings(
+       scalaVersion := yourScalaVersion,
+       micrositeName := "your-library",
+       micrositeBaseUrl := "your-library",
+       micrositeDocumentationUrl := "docs",
+       micrositeDescription := "A very descriptive description",
+       micrositeAuthor := "Yours truly",
+       micrositeGithubOwner := "your-github-username",
+       micrositeGithubRepo := "your-github-repository",
+       skip in publish := true)
+     .enablePlugins(MicrositesPlugin)
+   #+end_src
+
+   And add it to your main project with =.aggregate()=
+   #+begin_src scala
+   lazy val myProject = project
+     .in(file("."))
+     .settings(projectSettings)
+     .aggregate(microsite, core)
+   #+end_src
+3. An example structure for the =docs= folder would be the following
+   #+begin_src
+   docs/
+     index.md
+     guide/
+       index.md
+   #+end_src
+4. Then, in the =sbt= shell, run =publishMicrosite=. To build and view locally, run =makeMicrosite=.
+
+Now you've got a snappy website for your project! I always like to look at pretty documentation. It definitely raises the chances of me actually reading it.
+
+For more information, you can visit the [[https://47degrees.github.io/sbt-microsites/][sbt-microsites]] microsite!

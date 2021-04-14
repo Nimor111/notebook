@@ -3,7 +3,7 @@
 , author =
     Some "Georgi Bojinov"
 , theme =
-    "teal"
+    "blue"
 , editUrl =
     Some "https://github.com/Nimor111/notebook/edit/master/"
 , siteBaseUrl =
