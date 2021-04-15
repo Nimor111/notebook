@@ -1,0 +1,71 @@
+* Org log into drawer
+:PROPERTIES:
+:Date: 2021-04-15
+:tags: stream
+:END:
+
+** Note
+A short one today, but it's something that I can't believe I didn't discover earlier.
+Whenever an org-mode =TODO='s state is changed (it's closed / rescheduled), you get a =CLOSING NOTE= under the
+=TODO= heading (provided you've set =org-log-done= to =t= as I have, as I want to add notes when I finish a task). Something like this:
+
+#+begin_src org
+,*** DONE Do something interesting
+CLOSED: [2999-99-99 Mon 99:99]
+- CLOSING NOTE [2021-02-01 Mon 22:39]
+#+end_src
+
+This is fine, but when the task is recurring, we get something like this:
+
+#+begin_src org
+,*** TODO Do something interesting every day
+SCHEDULED: <2999-99-99 Mon .+1d>
+- CLOSING NOTE [2999-99-99 Mon 99:99]
+- CLOSING NOTE [2999-99-98 Sun 99:99]
+- CLOSING NOTE [2999-99-97 Sat 99:99]
+- CLOSING NOTE [2999-99-96 Fri 99:99]
+- CLOSING NOTE [2999-99-95 Thu 99:99]
+- CLOSING NOTE [2999-99-94 Wed 99:99]
+- CLOSING NOTE [2999-99-93 Tue 99:99]
+- CLOSING NOTE [2999-99-92 Mon 99:99]
+- CLOSING NOTE [2999-99-91 Sun 99:99]
+- CLOSING NOTE [2999-99-90 Sat 99:99]
+#+end_src
+
+And so on. This easily gets out of hand, especially if you have a description of the task lying around there, it
+can get lost in the clutter quickly.
+
+These closing note lines can be hidden away with one simple setting - =org-log-into-drawer=.
+
+When you switch it on, it'll neatly place all the logs of the task's completion/rescheduling in the =:LOGBOOK:=
+drawer, where your clock entries usually end up.
+
+So the task will now look like this:
+
+#+begin_src org
+,*** TODO Do something interesting every day
+SCHEDULED: <2999-99-99 Mon .+1d>
+:LOGBOOK:
+- CLOSING NOTE [2999-99-99 Mon 99:99]
+- CLOSING NOTE [2999-99-98 Sun 99:99]
+- CLOSING NOTE [2999-99-97 Sat 99:99]
+- CLOSING NOTE [2999-99-96 Fri 99:99]
+- CLOSING NOTE [2999-99-95 Thu 99:99]
+- CLOSING NOTE [2999-99-94 Wed 99:99]
+- CLOSING NOTE [2999-99-93 Tue 99:99]
+- CLOSING NOTE [2999-99-92 Mon 99:99]
+- CLOSING NOTE [2999-99-91 Sun 99:99]
+- CLOSING NOTE [2999-99-90 Sat 99:99]
+:END:
+#+end_src
+
+The drawer can be toggled, leaving the task clean of clutter, while keeping the closing / clock times intact.
+
+#+begin_src org
+,*** TODO Do something interesting every day
+SCHEDULED: <2999-99-99 Mon .+1d>
+:LOGBOOK:...
+#+end_src
+
+This setting has definitely improved the look of my recurring tasks and has made my org files a lot less
+cluttered.
