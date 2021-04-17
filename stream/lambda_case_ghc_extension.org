@@ -1,0 +1,41 @@
+* Lambda Case GHC Extension
+:PROPERTIES:
+:Date: 2021-04-17
+:tags: stream
+:END:
+
+** Note
+One of my favourite extensions to GHC (the most prominent Haskell compiler) is =LambdaCase=. It allows you to
+shorten a =case= expression in Haskell by quite a bit. Let's see how.
+
+A =case= expression usually looks like this:
+#+begin_src haskell
+data Colour = Red | Green | Blue
+
+printColour :: Colour -> Text
+printColour colour = case colour of
+  Red -> "red"
+  Green -> "green"
+  Blue -> "blue"
+#+end_src
+
+See those two uses of the =colour= identifier? That's a bit too much at times, especially with nested cases.
+
+Let's see how we can shorten it with =LambdaCase=.
+
+#+begin_src haskell
+{-# LANGUAGE LambdaCase #-}
+
+data Colour = Red | Green | Blue
+
+printColour :: Colour -> Text
+printColour = \case
+  Red -> "red"
+  Green -> "green"
+  Blue -> "blue"
+#+end_src
+
+Since well written type signatures can convey the meaning of a function well enough, the more concise syntax
+here doesn't sacrifice readibility in my opinion.
+
+I'll dig into how it's implemented in future notes. I just wanted to highlight its usage here.
