@@ -1,0 +1,70 @@
+* Simulate input to interactive elisp functions
+:PROPERTIES:
+:Date: 2021-04-19
+:tags: stream
+:END:
+
+** Note
+It's time for another Emacs package showcase. This time it'll be simulating input to interactive Elisp functions.
+
+Elisp has an =interactive= mode for functions that are meant to be invoked with =M-x= and expect input from the
+user. An =interactive= function is declared like this:
+
+#+begin_src elisp
+(defun interactive-func ()
+  (interactive)
+  ;; more statements
+)
+#+end_src
+
+But what if we wanted to automate a workflow in Emacs that involves calling one of these functions from within
+another function and passing input to it?
+
+*** Two examples from my workflow
+1. Since the custom org agenda views just don't seem to want to work for me, I have created a couple of
+   functions that will filter my agenda entries when I open it. This requires calling the interactive function
+   =org-agenda-filter= and an input of filters to apply.
+2. I want to have a function that starts a journal entry, clocks in, and takes me to the journal file in one
+   click. This requires calling the interactive function =org-roam-dailies-capture-today= and an input of =j= to
+   create a journal entry.
+
+**NB**: This is what works for me, I'm aware these could be achieved in many other ways.
+
+So, how do we do this?
+We can use the [[https://github.com/DarwinAwardWinner/with-simulated-input][with-simulated-input]] package.
+
+It does exactly what it says - it can simulate input to interactive functions.
+Let's see how we can use it in the two scenarios above:
+
+1. We will simulate the filter "+foo+bar" which will filter by these categories (filter is a generic term, so
+   let's assume foo and bar are categories in our agenda).
+
+   #+begin_src elisp
+   (defun org-home-agenda ()
+     (interactive)
+     (org-agenda nil "a")
+     (org-agenda-day-view)
+     (with-simulated-input "+foo+bar RET"
+       (org-agenda-filter)))
+   #+end_src
+
+   We wrap the function in =with-simulated-input= and it does the magic for us.
+
+2. We simulate pressing =j= in =org-roam-dailies-capture-today= (and do some other things afterwards such as
+   clock in and decrypt the file):
+
+   #+begin_src elisp
+   (defun start-journal-entry ()
+     "Starts a journal entry for today"
+     (interactive)
+     (with-simulated-input "j"
+       (org-roam-dailies-capture-today))
+     (org-capture-finalize)
+     (org-roam-dailies-find-today)
+     (org-mru-clock-in)
+     (org-decrypt-entry))
+   #+end_src
+
+*** Summary
+=with-simulated-input= is a useful package to simulate input to interactive functions in automated workflows. It
+can open up a bunch of possibilities to programatically achieve a lot of manual stuff you do in Emacs. Try it out!
