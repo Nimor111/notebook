@@ -13,6 +13,8 @@ It uses jekyll under the hood to render markdown files into a static website. An
 convenient =packageMicrosite= command that can integrate easily with github-pages to create a project
 website. (e.g. =your-username.github.io/your-project=). You can also use custom domains.
 
+=Note: Requires sbt > or equal to 1.3.0=
+
 *** Setup
 To set it up, I like to put it into a separate sbt subproject.
 
@@ -58,3 +60,4 @@ To set it up, I like to put it into a separate sbt subproject.
 Now you've got a snappy website for your project! I always like to look at pretty documentation. It definitely raises the chances of me actually reading it.
 
 For more information, you can visit the [[https://47degrees.github.io/sbt-microsites/][sbt-microsites]] microsite!
+
