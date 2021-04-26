@@ -1,0 +1,33 @@
+* Inherit tags in Org mode
+:PROPERTIES:
+:Date: 2021-04-21
+:tags: stream
+:END:
+
+** Note
+An aspect of tags in org-mode that I had long overlooked is =inherited tags=. It's a simple idea: when you tag a
+heading, all it's children (subheadings) will also receive this tag in addition to their own. The is very useful
+when categorizing certain headings in one file. For example I can task different tasks at work with their
+general category (meetings for example, or tickets i'm working on) and then tag the specific meeting or task
+with its own tags, which provide context.
+They are most useful in the org-agenda view.
+
+How this looks in practice:
+
+#+begin_src org
+,* Meetings :meeting:
+,** Recurring meeting :recurring:
+,** One off meeting :one-off:
+,* Tasks :task:
+,** Frontend task :frontend:
+,** Backend task :backend:
+#+end_src
+
+#+begin_src org
+Recurring meeting :meeting:recurring::
+One off meetng :meeting:one-off::
+Frontend task :task:frontend::
+Backend task :task:frontend::
+#+end_src
+
+The flexibility of org-mode to structure data is quite impressive.

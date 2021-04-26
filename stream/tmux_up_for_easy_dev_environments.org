@@ -1,0 +1,46 @@
+* Tmux up for easy dev environments
+:PROPERTIES:
+:Date: 2021-04-24
+:tags: stream
+:END:
+
+** Note
+When working on a coding project continuously, we tend to settle into a routine of running the same few commands and
+opening the some applications every time we start working on it. And since the programming world is all about
+automation, we might start to search for a way to do all that with a single command (or "the click of a button"
+as marketing goes).
+
+Well, for those of us that use the terminal, there is a good solution for that. It's called [[https://github.com/jamesottaway/tmux-up][tmux-up]].
+If you're not familiar with =tmux=, it's basically a way to organize terminal tabs and split terminal
+windows - a terminal multiplexer, where its name also comes from. (that doesn't even scratch the surface of it,
+but it's good enough for this post). =Tmux-up= is a way to describe the desired state of a tmux session (the
+amount of tabs and the commands you run in each of them) using standard tmux commands.
+
+Let's see it in action for a Scala application:
+
+Put this in a file called =dev.conf=
+#+begin_src conf
+send-keys 'git checkout <your-branch> && git pull --rebase' C-m
+new-window -n ide
+send-keys 'idea &' C-m
+new-window -n server
+send-keys 'sbt' C-m
+new-window -n console
+send-keys 'sbt amm' C-m
+new-window -n monitor
+send-keys 'htop' C-m
+#+end_src
+
+What this does is open a bunch of named terminal tabs with tmux and runs git commands, turns on my IDE, runs the
+sbt shell, opens up the ammonite shell for the project, and the =htop= monitor so I can see when the JVM has
+murdered my RAM and take appropriate measures.
+
+All this can be achieved with one command:
+#+begin_src sh
+tmux-up dev.conf
+#+end_src
+
+And that's it! Your dev environment is now a tad more automated!
+
+**Note**: Take care to not have =tmux= activated before running the command, because it tends to not work. Best
+  to be outside of =tmux= and let it take care of running it.
