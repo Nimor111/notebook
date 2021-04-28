@@ -1,0 +1,28 @@
+* Awesome stars collection
+:PROPERTIES:
+:Date: 2021-04-28
+:tags: stream
+:END:
+
+** Note
+*** The problem
+I star a lot of stuff on GitHub. All the time. I see a project I like, I put a star on it. This has led to me
+accumulating over 1000 starred projects over the years. One might ask, what's the point of it, I can't possibly
+remember every project i've ever starred! Wouldn't it be nice to be able to rediscover things you starred a long
+time ago, perhaps find something that's relevant to your current needs?
+
+*** What can we do?
+We'd need a way to aggregate and categorize our starred projects, and make them easy to view and search. Perhaps
+something like those awesome lists for each language or domain that are abundant on GitHub would do the trick?
+
+*** How can we do it?
+To achieve this, we can use [[https://github.com/maguowei/starred][starred]].
+It's a tool to do exactly that - fetch your starred projects on GitHub and organize them by technology,
+generating a pleasant markdown file to view. It's your own little awesome technologies list.
+
+Taking it further, we can make our own awesome repository and even update it daily with our newest stars using
+the [[https://github.com/maguowei/awesome-stars][awesome-stars]] template. Just create a new repository based on it, change the username and you're off to the
+races. It uses a github action with a cronjob that updates your stars every day. You can view, search and marvel
+at your collection of stars, even make use of it!
+
+Here's mine for reference: [[https://github.com/Nimor111/awesome-stars][my-awesome-stars]]
