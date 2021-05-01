@@ -1,0 +1,21 @@
+* Tabwave - a delightful productivity browser plugin
+:PROPERTIES:
+:Date: 2021-05-01
+:tags: stream
+:END:
+
+** Note
+I recently discovered a nice little browser plugin called [[https://tabwave.vercel.app/][Tabwave]]. It replaces your browser new tab with a
+dashboard / todo list / pomodoro timer / notepad style screen. You can add often visited links to it for easy
+access, search the web from it (though I haven't yet figured out if it allows another search engine besides
+google, as I don't use it), start a pomodoro timer, write down daily tasks and notes in convenient tabs. There's
+also a neat feature that generates a random activity for you to do when you're bored. It stores all data in the
+local storage of the browser (by word of the author). So it's more of a daily dashboard than anything longer
+lasting. But it has a lot of stuff conveniently put in one place. I like it.
+
+The code is not yet open source though, so that's a bit worrisome to me and I wouldn't put anything too personal
+in there, but the author has said they would open source it eventually.
+
+Here's a screenshot of it:
+
+[[../static/tabwave.png]]
