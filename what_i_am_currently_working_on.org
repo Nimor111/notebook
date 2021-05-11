@@ -1,0 +1,16 @@
+* What I am currently working on
+:PROPERTIES:
+    :Date: 2021-05-11T21:59
+    :END:
+
+Keeping track of stuff (technologies, projects, etc.) i'm working on or exploring at the moment (outside my job).
+
+** What i'm working on now
+*** Learning Clojure (Script)
+**** Making a mind map (or hierarchical note taking collection) of what I learn
+**** Create a full stack Clojure app (using Reagent / Re-frame / Ring)
+*** Writing [[z:/stream?type=branch]] notes every couple of days
+** What I want to start working on more
+*** Growing my zettelkasten
+*** Making a couple of simple games
+Interested in the [[https://bevyengine.org/][bevy]] engine.

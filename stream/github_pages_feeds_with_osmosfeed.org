@@ -1,0 +1,16 @@
+* Github pages feeds with osmosfeed
+:PROPERTIES:
+:Date: 2021-05-08
+:tags: stream
+:END:
+
+** Note
+Here's a quick and easy solution to have your favourite RSS feeds running as a static github pages website.
+https://github.com/osmoscraft/osmosfeed
+
+It takes in a file with your feeds, rebuilds them every so often with a GitHub actions cron job, and categorizes
+them nicely by day and by feed. Also provides a nice github template to easily start off: https://github.com/osmoscraft/osmosfeed-template.
+
+Here's my feed repo https://github.com/Nimor111/feeds and website https://nimor111.github.io/feeds/
+
+It's a nice zero setup solution to having your feeds in one place. Give it a try!

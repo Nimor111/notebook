@@ -6,3 +6,4 @@ The technology used to implement the method is the great [[https://github.com/sr
 ** Interesting tidbits
 
 - My stream of daily notes: [[z:/stream?type=branch]]
+- [[z:/what_i_am_currently_working_on?type=branch]]

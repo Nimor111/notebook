@@ -1,0 +1,49 @@
+* Basic GTD Workflow
+:PROPERTIES:
+:Date: 2021-05-11
+:tags: stream
+:END:
+
+** Note
+Getting Things Done is a system for productivity coined by David Allen and has become my favoured way of
+organizing my projects, reminders, and areas of focus in life. Here's a short overview of the aspects of GTD I
+use. While the book itself is still on my reading list, I have taken inspiration from the various articles on
+the internet and found/created a workflow that works for me.
+
+There are four key elements of GTD for me and they are basically four lists:
+*** Inbox
+This is, to paraphrase, a place to "put something there right now and return to it at the end of the day", or
+simple "a place to put something". The inbox is the entrypoint, where every idea, article, video, project,
+plan, reminder, first ends up. During the day, while occupied with work or something else, I can be confident
+I always have a place to put something so I don't forget it. At the end of the day I review my inbox and move
+everything to its correct place in the system. The inbox is my favourite part of GTD, since it ensures nothing
+is forgotten and is a very quick way to "capture" thoughts that may otherwise fade away instantly.
+
+
+*** Tickler
+Another great idea, a tickler is there to remind you of something you need to do at a specific date
+and time - a bill, rent, groceries, any event, recurring or not. Anything you want to be reminded of at a
+specific point in time goes in here. This has been an absolute lifesaver for me on many occasions.
+
+
+*** GTD
+The bread and butter of the system. This is a list of projects that are most relevant to you right
+now. They can be anything - from a coding project to moving to a new house or going on a trip. Each project
+has actions that have to be done to complete it. The most important action being the =next= action - what is
+the next action you can do to move this project forward, and ultimately to completion? Every project should
+have a next action, so you never have to wonder what to do when working on the project.
+
+
+*** Someday/Maybe
+Not every project will be done now, or at all. But you want to keep them around for the
+future. Ambitions, goals, projects for the future, or just something that has caught your eye but you don't
+have the capacity to do right now - that goes in the =someday/maybe= list. Projects usually travel between the
+gtd and someday lists. The notion of projects and next actions is valid here as well, so that you can get a good
+head start.
+
+*** Weekly GTD Review
+A weekly review keeps the system in check, lets you keep track of your projects, move them around, come up with
+new ones, write down next actions, and ultimately, let you be more productive. Don't trust your brain to
+remember all that you want to achieve, let an external system be the host. And go Get Things Done.
+
+I'll talk about my implementation of the system in Emacs and org-mode another time (or rather, my inspiration for it).
