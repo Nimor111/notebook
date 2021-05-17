@@ -1,0 +1,23 @@
+* Hierarchical note taking
+:PROPERTIES:
+:Date: 2021-05-14
+:tags: stream
+:END:
+
+** Note
+A method of taking notes i've been recently exploring is hierarchical note taking. It's basically what it
+sounds - organizing notes into hierarchies based on a topic, organizing subtopics and having infinitely nested
+structures. As opposed to zettelkasten, which revolves around no hierarchy and having it grow organically,
+knowledge bases that are more wiki focused (e.g. on concrete facts, tips and tricks, examples of usage) might
+benefit from a hierarchical approach from the get go. This approach facilitates searching and finding
+information, which is the main idea behind a wiki after all.
+Some ideas about titles of notes when doing hierarchical note taking:
+1. To avoid having infinite levels of directories for each new level of the hierarchy, note titles can contain
+   the hierarchy. For example, a note in the emacs tips hierarchy would have the following title: emacs.tips.Tip 1
+2. Try having similar structures for similar topics. Like when learning programming languages for example, you
+   could have a template hierarchy - as every programming language has similar ideas and concepts, this works well.
+3. Along the lines of templates - have "schema" files that describe the form of a hierarchy for easier orientation.
+
+My main inspiration for hierarchical note taking is the dendron tool and the accompanying blog posts: https://wiki.dendron.so/
+
+What i'm using to try it out is an emacs package that combines some of dendron's features with =org-roam= - https://github.com/vicrdguez/dendroam

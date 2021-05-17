@@ -1,0 +1,36 @@
+* Quick overview of my dev machine setup
+:PROPERTIES:
+:Date: 2021-05-17
+:tags: stream
+:END:
+
+** Note
+This is a quick overview of the tools and software I use to setup a (almost) reproducible system configuration
+across multiple machines and OS reinstalls (those happen more often that I care to admit). I'll do separate
+posts on the different tools in the future.
+
+*** Emacs
+My text editor, personal management system, email reader, RSS reader, and tinkering playground. It's pretty
+great, enough said. I host my Emacs configuration over on [[https://github.com/Nimor111/.emacs.d][github]]. All it takes is a git clone and we're good to
+go.
+
+*** Home manager
+Based on [[z:/the_nix_package_manager?type=branch]], [[https://github.com/nix-community/home-manager][Home manager]] is an awesome, declarative and reproducible way to
+manage your dotfiles and user applications. And all it takes is a =home-manager switch= command to get
+everything going. Check out my config [[https://github.com/Nimor111/home.nix][here]].
+
+*** Nextcloud
+I use [[https://nextcloud.com/][Nextcloud]] for keeping all my files in sync on a personal server, hosted on Linode. I also use Nextcloud to
+sync contacts on my phone, have some kanban boards there as well. Nextcloud is a nice self-hosted alternative to
+the google suite of tools, and has many other applications and plugins as well. It's you owning your data.
+
+*** Nixos config
+I used [[https://nixos.org][NixOS]] for a while and crafted (sounds better than copy pasted right?) a config for it as well: [[https://github.com/Nimor111/nixos-config][My NixOS
+Config]]. NixOS is an OS based on Nix that provides a declarative configuration not only of dotfiles and user
+apps, but of the entire system. It's a novel way to think about an operating system, and a powerful way at that.
+
+*** Conclusion
+These are the main tools I use to keep my systems in sync, and it's been working quite well. There's more to be
+desired, but i've been able to streamline setting up a machine from zero to hero in a short time.
+
+Details on each to come.
