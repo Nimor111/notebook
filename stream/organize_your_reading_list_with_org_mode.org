@@ -1,0 +1,31 @@
+* Organize your reading list with Org mode
+:PROPERTIES:
+:Date: 2021-05-20
+:tags: stream
+:END:
+
+** Note
+Today it's time for yet another emacs package highlight. This time it's a package to manage your reading list
+with org-mode in plain text - [[https://github.com/lepisma/org-books][org-books]].
+
+The package revolves around keeping an org file with your books (controlled by setting the variable
+=org-books-file=) and adding book entries to it, organizing it however you wish. I've setup mine with headings
+for each genre (sometimes by language) and then subheadings for series of books if they're part of one.
+
+There are several ways to add books:
+1. Manually, through the =org-books-add-book= command, specifying a name and an author. The package will then
+   list out the headings and you can choose under which category to put it.
+2. By ISBN, through the =org-books-add-isbn= command, it pulls down the title and author information automatically.
+3. From a web url, through the =org-books-add-url= command, it supports a couple of well-known book reading / selling
+   platforms (e.g. goodreads, amazon, etc.)
+
+Org capture templates can be setup for a more personalized book entry setup (after all, it's just an org-mode
+file), as well as using org clocking / logging to track book reading progress.
+
+This package is a great example how org-mode is powerful enough to support all kinds of workflows without having
+to put too much elisp magic on top of it.
+
+Go try it out and manage your reading list with plain text and ease!
+
+P.S. You can rate books, too, with =org-books-rate-book= and it even renders nice little stars in the
+=PROPERTIES= drawer!
