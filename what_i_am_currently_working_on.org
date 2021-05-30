@@ -7,8 +7,8 @@ Keeping track of stuff (technologies, projects, etc.) i'm working on or explorin
 
 ** What i'm working on now
 *** Learning Clojure (Script)
-**** Making a mind map (or hierarchical note taking collection) of what I learn
-**** Create a full stack Clojure app (using Reagent / Re-frame / Ring)
+**** Making a clojure mind map with org-brain.
+**** Create a full stack Clojure app (using Reagent / Re-frame / Ring / Reitit)
 *** Writing [[z:/stream?type=branch]] notes every couple of days
 ** What I want to start working on more
 *** Growing my zettelkasten
