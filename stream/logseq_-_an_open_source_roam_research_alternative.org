@@ -1,0 +1,31 @@
+* Logseq - an open source roam research alternative
+:PROPERTIES:
+:Date: 2021-05-23
+:tags: stream
+:END:
+
+** Note
+[[https://roamresearch.com][Roam research]] is a great application for note-taking using the zettelkasten method, and one of the most popular
+ones. It has seamless support for backlinking, autocreation of pages (nodes), graph view, etc., everything you
+would need for a zettelkasten experience.
+
+So why would you look for an alternative? Well, for one, roam research has a paywall, which might put off people
+who want to just try it out. (There is a free trial for a month, so if that works for you, go ahead!). Also, it
+does not let you self-host your notes, everything is stored on their cloud. Which is not ideal if you care too
+much about privacy and longevity of your notes. And it's not open source, which can also be a wall for some
+people.
+
+What is the alternative, then? I recently discovered [[https://logseq.com][Logseq]] and I would say it's a very promising application,
+ticking all the boxes from above, as well as being hugely inspired by Roam and supporting a lot of the features
+already despite being in alpha (which should change soon I believe). What's more, it supports writing notes in
+org-mode, which was an instant selling point for me as I use Emacs for a lot of my workflow.
+
+Logseq has the option to host notes in a Github repository with automated sync, or a local directory (this
+requires the Native filesystem API on Chrome so it works only on chromium based browsers, Brave excluded, since
+it removed support for that API). But Logseq has a desktop application as well, so your setup can be fully local
+and offline.
+
+For an application in alpha, it's pretty damn impressive. It has a long way to go yet, but i'll be looking at it
+(and using it) with interest.
+
+Give it a go!

@@ -1,0 +1,16 @@
+* How do you in Emacs
+:PROPERTIES:
+:Date: 2021-05-27
+:tags: stream
+:END:
+
+** Note
+A short Emacs package showcase - [[https://github.com/thanhvg/emacs-howdoyou][How do you]]. It's a package to search stack overflow and its sister sites
+(the various stackexchange sites and so on) inside of Emacs, opening up answers in org-mode buffers.
+
+The main command is =howdoyou-query=. You get an org-mode buffer with the results paged and with headings for
+the questions and answers individually. It's pretty nice. What it also does is put source code blocks in
+executable =org-babel= blocks, which allows them to be evaluated inside the buffer itself, provided you have the
+=org-babel= executor function installed.
+
+Give it a try, it's good!

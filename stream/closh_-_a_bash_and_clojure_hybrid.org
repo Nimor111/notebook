@@ -1,0 +1,44 @@
+* Closh - a bash and clojure hybrid
+:PROPERTIES:
+:Date: 2021-05-30
+:tags: stream
+:END:
+
+** Note
+Today's spotlight is for [[https://github.com/dundalek/closh][Closh]] - a bash-like shell based on Clojure (as the repo says). It's basically a shell
+where you can mix Bash and Clojure code and evaluate it in the same place.
+
+Why, you ask? Well, some operations you do in your everyday terminal work can be made a lot more pleasant with
+Clojure code, since Clojure has a rich standard library of functions for data processing and working with lines,
+basically. Also, it's a hell of a lot more simple than bash to understand (once you get over all the
+(parentheses)). It's also easier to do scripting since Clojure is a full-fledged programming language with
+sensible rules to it (bash is also a programming language, of course, but in no way is it sensible).
+
+Here's some examples (you can see more in the repository):
+
+Bash
+#+begin_src sh
+ls -a | grep "^\\."
+#+end_src
+
+Closh / clojure
+#+begin_src clojure
+ls -a |> (filter #(re-find #"^\." %))
+#+end_src
+
+Math with Bash
+#+begin_src sh
+echo '(1 + sqrt(5))/2' | bc -l
+#+end_src
+
+Math with Clojure
+#+begin_src clojure
+(/ (+ 1 (Math.sqrt 5)) 2)
+#+end_src
+
+You can also use Closh to call shell commands and do shell scripting. Your shell scripts are basically clojure programs, and this comes
+with all the goodies of the JVM ecosystem.
+
+I also find it a great way to learn and practice a bit of Clojure, which i've been doing anyway.
+
+Enjoy!

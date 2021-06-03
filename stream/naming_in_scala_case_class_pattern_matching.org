@@ -1,0 +1,79 @@
+* Naming in Scala case class pattern matching
+:PROPERTIES:
+:Date: 2021-06-02
+:tags: stream
+:END:
+
+** Note
+Today I have a little "oh so that's how it works" moment to explain related to pattern matching with case
+classes in Scala.
+
+So what's the use case?
+
+Pattern matching is one of the pinnacle features of functional programming that allows us to match on different
+shapes and types of values returned from functions in order to go down branching paths in our code. Most often
+it's used for matching on fields of case classes and on types. We'll focus on the former now. An example:
+
+#+begin_src scala
+sealed trait Book
+case class Fiction(title: String, author: String, age: Int) extends Book
+case class Thriller(title: String, author: String, age: Int) extends Book
+case class Adventure(title: String, author: String, age: Int) extends Book
+
+def describeBook(book: Book) = book match {
+  case Fiction(title, author, age) => println(s"There are 20 dragons in the book called $title by $author")
+  case Thriller(title, author, age) => println(s"There are 20 crimes in the book called $title by $author")
+  case Adventure(title, author, age) => println(s"There are 20 adventures in the book called $title by $author")
+}
+#+end_src
+
+A dumb example, but it should show how pattern matching can be useful to do different things depending on the
+type of the input. Pattern matching can help our functions to be total as well, making sure that all possible
+inputs are handled.
+
+Anyway, let's look at the names of the fields when matching. They could be anything, but it's usually a good idea to
+name them as the actual fields.
+
+Alright, what if we wanted to use this in tests?
+Here's an example test:
+
+#+begin_src scala
+val expectedBookAge = 12
+def testBookAge(book: Book) = book match {
+  case Fiction(_, _, expectedBookAge) => ok // ok makes the test succeed
+  case Adventure(_, _, expectedBookAge) => ok
+  case Thriller(_, _, expectedBookAge) => ok
+  case _ => ko // courtesy of the specs2 test framework
+}
+#+end_src
+
+This should work, right, as the name of the matching field and the value we're testing against are the same?
+You'd think so. But actually it doesn't. The matching field and the =val= above are scoped differently, and the
+=expectedBookAge= in the test function is a separate value from the one above it, even though they have the same
+names.
+
+This has tripped me up a couple of times. There's two ways to fix it:
+
+#+begin_src scala
+val ExpectedBookAge = 12
+def testBookAge(book: Book) = book match {
+  case Fiction(_, _, ExpectedBookAge) => ok // ok makes the test succeed
+  case Adventure(_, _, ExpectedBookAge) => ok
+  case Thriller(_, _, ExpectedBookAge) => ok
+  case _ => ko // courtesy of the specs2 test framework
+}
+#+end_src
+
+#+begin_src scala
+val expectedBookAge = 12
+def testBookAge(book: Book) = book match {
+  case Fiction(_, _, `expectedBookAge`) => ok // ok makes the test succeed
+  case Adventure(_, _, `expectedBookAge`) => ok
+  case Thriller(_, _, `expectedBookAge`) => ok
+  case _ => ko // courtesy of the specs2 test framework
+}
+#+end_src
+
+I'm not sure why it works the way it does, but now at least I can use the same names when asserting and pattern matching.
+
+But hey, at least I attempted to explain pattern matching as well in the process!
